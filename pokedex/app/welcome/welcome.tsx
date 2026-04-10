@@ -6,7 +6,7 @@ export function Welcome() {
   return (
     <main >
       
-        <div className="flex flex-auto justify-between bg-red-600 p-4 ">
+        <div className="flex flex-auto justify-between bg-linear-to-r from-red-500 to-yellow-500 p-4 ">
           <div className="p-1 flex gap-4 text-white">
             <h1>Pokemon </h1>
           </div>
@@ -21,15 +21,21 @@ export function Welcome() {
      
 
       <div className="flex  flex-col justify-between bg-red-100 min-h-[calc(105.2vh-105.2px)]">
-        <div className="p-4 ">
-          <input type="text" placeholder="Buscar Pokemon..." className="bg-white text-black placeholder:text-gray-500 border border-gray-300 rounded-lg p-2 m-1 w-370"/>
-          <button className="bg-red-500 text-white rounded-lg p-1 m-1">Buscar</button>
+
+        <div className="flex h-20 items-center bg-white mx-10 my-10 rounded-lg px-5 shadow-md ">
+            <form className="w-full relative">
+              <input 
+              type="text" 
+              className="w-330 p-3 pb-1 pl-10 border-b border-gray-200 focus:outline-none  "/>
+
+              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2">Buscar</button>
+            </form>
         </div>
 
 
         <div className="flex justify-between p-3">
 
-          <div className="houver:scale-105 duration-300 mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-yellow-300 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="houver:scale-100 duration-300 mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-yellow-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
             
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Pikachu</h1>
@@ -37,7 +43,7 @@ export function Welcome() {
             
           </div>
 
-          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-green-300 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-green-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
             
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Bulbassauro</h1>
@@ -45,7 +51,7 @@ export function Welcome() {
             
           </div>
 
-          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-red-300 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-red-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
             
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Charmander</h1>
@@ -53,7 +59,7 @@ export function Welcome() {
             
           </div>
 
-          <div className="mx-auto text-center max-w-sm  flex-col items-center  gap-x-4 rounded-xl bg-blue-300 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto text-center max-w-sm  flex-col items-center  gap-x-4 rounded-xl bg-blue-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
     
             
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Squirtle</h1>
@@ -64,7 +70,7 @@ export function Welcome() {
         </div>
     
         <div className="bg-blue-900 ">
-          <h1 className="text-center text-xl font-medium text-white p-5">Pokédex React + Tailwind</h1>
+          <h1 className="text-center text-sm  text-white p-1.5">Pokédex - React + Tailwind</h1>
         </div>
       </div>
     </main>
