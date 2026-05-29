@@ -7,7 +7,7 @@ export function Welcome() {
     <main >
       
         <div className="flex flex-auto justify-between bg-linear-to-r from-red-500 to-yellow-500 p-4 ">
-          <div className="p-1 flex gap-4 text-white">
+          <div className="p-1 flex gap-4 text-white text-2xl font-bold">
             <h1>Pokemon </h1>
           </div>
 
@@ -28,40 +28,40 @@ export function Welcome() {
               type="text" 
               className="w-330 p-3 pb-1 pl-10 border-b border-gray-200 focus:outline-none  "/>
 
-              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2">Buscar</button>
+              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2 cursor-pointer">Buscar</button>
             </form>
         </div>
 
 
         <div className="flex justify-between p-3">
 
-          <div className="houver:scale-100 duration-300 mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-yellow-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="houver:scale-100 duration-300 mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-yellow-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-            
-              <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Pikachu</h1>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" className="w-40 h-40 mx-auto mb-2" />
+              <h1 className="text-center text-xl font-medium  dark:text-white p-10">Pikachu</h1>
               <button className="bg-yellow-400 rounded-lg p-0.5 text-white m-0.5">Eletrico</button>
             
           </div>
 
-          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-green-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto py-2 flex flex-col max-sm: text-center items-center gap-2 rounded-xl bg-green-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-            
+             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" className="w-40 h-40 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Bulbassauro</h1>
-              <button className="bg-green-400 rounded-lg p-0.5 text-white m-0.5">Planta</button>
+              <button className="bg-green-400 rounded-lg px-2 py-0.5 text-xs text-white m-0.5">Planta</button>
             
           </div>
 
-          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-red-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-red-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-            
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" className="w-40 h-40 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Charmander</h1>
               <button className="bg-red-400 rounded-lg p-0.5 text-white m-0.5">Fogo</button>
             
           </div>
 
-          <div className="mx-auto text-center max-w-sm  flex-col items-center  gap-x-4 rounded-xl bg-blue-200 p-15 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto text-center max-w-sm  flex-col items-center  gap-x-4 rounded-xl bg-blue-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
     
-            
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" className="w-40 h-40 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Squirtle</h1>
               <button className="bg-blue-400 rounded-lg p-0.5 text-white m-0.5 ">Agua</button>
             
