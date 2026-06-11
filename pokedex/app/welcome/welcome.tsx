@@ -20,7 +20,7 @@ export function Welcome() {
      
      
 
-      <div className="flex  flex-col justify-between bg-red-100 min-h-[calc(105.2vh-105.2px)]">
+      <div className="flex  flex-col justify-between  bg-red-100 min-h-[calc(99.4vh-99.4px)]">
 
         <div className="flex h-20 items-center bg-white mx-10 my-10 rounded-lg px-5 shadow-md ">
             <form className="w-full relative">
@@ -33,35 +33,35 @@ export function Welcome() {
         </div>
 
 
-        <div className="flex justify-between p-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center p-6 max-w-6xl mx-auto ">
 
-          <div className="houver:scale-100 duration-300 mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-yellow-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className=" flex flex-col h-68  w-64 min-w-[16rem] max-w- text-center items-center gap-x-4 rounded-xl bg-yellow-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" className="w-40 h-40 mx-auto mb-2" />
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" className="w-20 h-20 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium  dark:text-white p-10">Pikachu</h1>
               <button className="bg-yellow-400 rounded-lg p-0.5 text-white m-0.5">Eletrico</button>
             
           </div>
 
-          <div className="mx-auto py-2 flex flex-col max-sm: text-center items-center gap-2 rounded-xl bg-green-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col h-68  w-64 text-center items-center gap-x-4 rounded-xl bg-green-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" className="w-40 h-40 mx-auto mb-2" />
+             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" className="w-20 h-20 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Bulbassauro</h1>
               <button className="bg-green-400 rounded-lg px-2 py-0.5 text-xs text-white m-0.5">Planta</button>
             
           </div>
 
-          <div className="mx-auto flex flex-col max-w-sm text-center items-center gap-x-4 rounded-xl bg-red-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col h-68  w-64 text-center items-center gap-x-4 rounded-xl bg-red-200 p-5 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" className="w-40 h-40 mx-auto mb-2" />
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" className="w-20 h-20 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Charmander</h1>
               <button className="bg-red-400 rounded-lg p-0.5 text-white m-0.5">Fogo</button>
             
           </div>
 
-          <div className="mx-auto text-center max-w-sm  flex-col items-center  gap-x-4 rounded-xl bg-blue-200 p-15 shadow-lg outline outline-black/5  dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <div className="mx-auto flex flex-col h-68  w-64 text-center items-center gap-x-4 rounded-xl bg-blue-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
     
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" className="w-40 h-40 mx-auto mb-2" />
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" className="w-20 h-20 mx-auto mb-2" />
               <h1 className="text-center text-xl font-medium text-black dark:text-white p-10">Squirtle</h1>
               <button className="bg-blue-400 rounded-lg p-0.5 text-white m-0.5 ">Agua</button>
             
@@ -69,10 +69,12 @@ export function Welcome() {
     
         </div>
     
-        <div className="bg-blue-900 ">
+        
+      </div>
+      <div className="bg-taupe-900 ">
           <h1 className="text-center text-sm  text-white p-1.5">Pokédex - React + Tailwind</h1>
         </div>
-      </div>
+
     </main>
   );
 }

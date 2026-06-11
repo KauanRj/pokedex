@@ -18,7 +18,7 @@ export function Tipos() {
         </div>
      
 
-     <div className="p-8  bg-red-100 min-h-[calc(103.2vh-103.2px)]  ">
+     <div className="p-8  bg-red-100 min-h-[calc(99.4vh-99.4px)]  ">
 
 
        
@@ -40,7 +40,7 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-green-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://github.com/PokeAPI/sprites/blob/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/12.png" alt="Planta" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Planta</h1>
                 <p className="text-gray-500 dark:text-gray-400">Usam energia da natureza, folhas, vinhas e sementes</p>
                 <button className="bg-green-400 text-white px-2 py-1 rounded-md">Ex: Bulbasaur</button>
@@ -48,7 +48,7 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto houver:scale-100 duration-300 flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-red-200 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://github.com/PokeAPI/sprites/blob/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/10.png" alt="Fogo" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Fogo</h1>
                 <p className="text-gray-500 dark:text-gray-400">Possuem ataques quentes, intensos e explosivos</p>
                 <button className="bg-red-400 text-white px-2 py-1 rounded-md ">Ex: Charmander</button>
@@ -105,13 +105,15 @@ export function Tipos() {
         </div>
 
         
-        <div className="bg-blue-900 ">
-          <h1 className="text-center text-sm  text-white p-1.5">Pokédex - React + Tailwind</h1>
-        </div>
+       
 
 
 
      </div>
+
+      <div className="bg-taupe-900 flex justify-center">
+          <h1 className="text-center text-sm  text-white p-1.5">Pokédex - React + Tailwind</h1>
+        </div>
     </main>
   );
 }
