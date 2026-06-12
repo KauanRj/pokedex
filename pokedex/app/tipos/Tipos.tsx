@@ -18,7 +18,7 @@ export function Tipos() {
         </div>
      
 
-     <div className="p-8  bg-red-100 min-h-[calc(99.4vh-99.4px)]  ">
+     <div className="p-8  bg-red-100 min-h-[calc(90.4vh-90.4px)]  ">
 
 
        
@@ -32,7 +32,7 @@ export function Tipos() {
         <div className=" grid grid-cols-2 sm:grid-cols-4 p-10 gap-5">
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-yellow-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/13.png" alt="Planta" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Eletrico</h1>
                 <p className="text-gray-500 dark:text-gray-400">Pokémons rápidos que usam ataques de eletricidade</p>
                 <button className="bg-yellow-400 text-white px-2 m-0.5 rounded-md ">Ex: Pikachu</button>
@@ -40,15 +40,15 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-green-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                <img src="https://github.com/PokeAPI/sprites/blob/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/12.png" alt="Planta" />
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/12.png" alt="Planta" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Planta</h1>
                 <p className="text-gray-500 dark:text-gray-400">Usam energia da natureza, folhas, vinhas e sementes</p>
                 <button className="bg-green-400 text-white px-2 py-1 rounded-md">Ex: Bulbasaur</button>
 
             </div>
 
-            <div className="mx-auto houver:scale-100 duration-300 flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-red-200 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                <img src="https://github.com/PokeAPI/sprites/blob/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/10.png" alt="Fogo" />
+            <div className="mx-auto hover:scale-100 duration-300 flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-red-200 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/10.png" alt="Fogo" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Fogo</h1>
                 <p className="text-gray-500 dark:text-gray-400">Possuem ataques quentes, intensos e explosivos</p>
                 <button className="bg-red-400 text-white px-2 py-1 rounded-md ">Ex: Charmander</button>
@@ -56,7 +56,7 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-blue-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/11.png" alt="Agua" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Água</h1>
                 <p className="text-gray-500 dark:text-gray-400">São versáteis e usam jatos de água em batalha</p>
                 <button className="bg-blue-400 text-white px-2 py-1 rounded-md ">Ex: Squirtle</button>
@@ -64,7 +64,7 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-cyan-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/15.png" alt="Gelo" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Gelo</h1>
                 <p className="text-gray-500 dark:text-gray-400">Usam frio, neve e congelamento contra seus oponentes</p>
                 <button className="bg-cyan-400 text-white px-2 py-1 rounded-md ">Ex: Lapras</button>
@@ -72,7 +72,7 @@ export function Tipos() {
             </div>
             
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-stone-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/6.png" alt="Gelo" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Pedra</h1>
                 <p className="text-gray-500 dark:text-gray-400">São resistentes e possuem grande força defensiva</p>
                 <button className="bg-stone-400 text-white px-2 py-1 rounded-md ">Ex: Onix</button>
@@ -80,7 +80,7 @@ export function Tipos() {
             </div>
 
              <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-violet-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/14.png" alt="Gelo" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Psíquico</h1>
                 <p className="text-gray-500 dark:text-gray-400">Usam poderes mentais, telecinese e energia psíquica</p>
                 <button className="bg-violet-400 text-white px-2 py-1 rounded-md ">Ex: Mewtwo</button>
@@ -89,7 +89,7 @@ export function Tipos() {
             </div>
 
             <div className="mx-auto flex flex-col  max-w-350 text-center items-center gap-x-4 rounded-xl bg-purple-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/8.png" alt="Gelo" className="w-20 h-20 mx-auto mb-2" />
                 <h1 className="text-xl font-medium text-black dark:text-white flex text-center ">Fantasma</h1>
                 <p className="text-gray-500 dark:text-gray-400">Misteriosos, assustadores e difíceis de atingir</p>
                 <button className="bg-purple-400 text-white px-2 py-1 rounded-md ">Ex: Gengar</button>

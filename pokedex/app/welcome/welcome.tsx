@@ -33,7 +33,7 @@ export function Welcome() {
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center p-6 max-w-6xl mx-auto ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center p-6 mx-auto ">
 
           <div className=" flex flex-col h-68  w-64 min-w-[16rem] max-w- text-center items-center gap-x-4 rounded-xl bg-yellow-100 p-5 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
 
