@@ -1,4 +1,54 @@
 export function Tipos() {
+  const tipos = [
+    {
+      id: 1,
+      name: "Elétrico",
+      desc: "Pokémons rápidos que usam ataques de eletricidade",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/13.png",
+    },
+    {
+      id: 2,
+      name: "Planta",
+      desc: "Usam energia da natureza, folhas, vinhas e sementes",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/12.png",
+    },
+    {
+      id: 3, 
+      name: "Fogo",
+      desc: "Possuem ataques quentes, intensos e explosivos",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/10.png",
+    },  
+    {
+      id: 4, 
+      name: "Água", 
+      desc: "São versáteis e usam jatos de água em batalha",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/11.png",
+    },
+    { 
+      id: 5,  
+      name: "Gelo",
+      desc: "São rápidos e usam ataques de gelo",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/15.png",
+    },
+    { 
+      id: 6, 
+      name: "Pedra",  
+      desc: "São fortes e usam ataques de pedra",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/6.png",
+    },
+    { 
+      id: 7,
+      name: "Psíquico",
+      desc: "São misteriosos e usam ataques psíquicos",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/14.png",
+    },
+    {
+      id: 8,
+      name: "Fantasma",
+      desc: "São enigmáticos e usam ataques fantasmagóricos",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-vii/lets-go-pikachu-lets-go-eevee/small/8.png",
+    },
+  ];
   return (
     <main className="flex flex-col min-h-screen">
       
