@@ -1,80 +1,207 @@
+import { useEffect, useState } from "react";
+
+const API = "http://localhost:8080/pokemon";
+
+type Pokemon = {
+  
+  nome: string;
+  tipo: string;
+ 
+};
+
 export function Welcome() {
+  const [lista, setLista] = useState<Pokemon[]>([]);
+  const [nome, setNome] = useState("");
+  const [tipo, setTipo] = useState(""); 
+
+  const [nomeEditando, setNomeEditando] = useState<string | null>(null);
+  const [novoNome, setNovoNome] = useState("");
+  const [novoTipo, setNovoTipo] = useState("");
+
+  //Get /pokemon/lista
+  function carregar() {
+    fetch(`${API}/lista`)
+      .then((res) => res.json())
+      .then((dados) => setLista(dados));
+  }
+
+  //POST /pokemon/add
+  function adicionar(e: React.FormEvent) {
+    e.preventDefault();
+    fetch(`${API}/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ nome, tipo }),
+    }).then(() => {
+      setNome("");
+      setTipo("");
+      carregar();
+    });
+  }
+
+  function att(e: React.FormEvent) {
+    e.preventDefault();
+    if (!nomeEditando) return;
+
+    fetch(`${API}/update/${nomeEditando}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ nome: novoNome, tipo: novoTipo }),
+    }).then(() => {
+      setNomeEditando(null);
+      setNovoNome("");
+      setNovoTipo("");
+      carregar();
+    });
+  }
+
+  //DELETE 
+  function deletar(nome: string) {
+    if(confirm(`Tem certeza que deseja deletar o Pokémon ${nome}?`)) {
+      fetch(`${API}/delete/${nome}`, {
+        method: "DELETE",
+      }).then(() => carregar());
+    }
+  }
+
+
+  
+
+  useEffect(() => {
+    carregar();
+  }, []);
+
+ 
   return (
-    <main className="flex flex-col min-h-screen">
-      
-     
-      <div className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
-        <div className="p-1 flex gap-4 text-white text-2xl font-bold">
-          <h1>Pokemon</h1>
-        </div>
-        <div className="flex p-1 gap-4 text-white font-medium">
-          <h1 className="cursor-pointer hover:underline">Home</h1>
-          <h1 className="cursor-pointer hover:underline">Pokemons</h1>
-          <h1 className="cursor-pointer hover:underline">Tipos</h1>
-        </div>
-      </div>
+    <main className="flex min-h-screen flex-col">
+      <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 text-white shadow-md">
+        <h1 className="p-1 text-2xl font-bold">Pokémon</h1>
+        <nav className="flex gap-4 p-1 font-medium">
+          <a className="hover:underline" href="/">Home</a>
+          <a className="hover:underline" href="/pokemons">Pokémons</a>
+          <a className="hover:underline" href="/types">Tipos</a>
+        </nav>
+      </header>
 
-     
-      <div className="flex flex-col flex-1 bg-red-100 pb-10">
-
-        
-        <div className="flex h-20 items-center bg-white mx-10 my-10 rounded-lg px-5 shadow-md ">
-
-            <form className="w-full relative">
-
+      <div className="flex flex-1 flex-col bg-red-100 pb-10">
+        <div className="mx-4 my-8 rounded-lg bg-white p-5 shadow-md sm:mx-10">
+          <h2 className="mb-4 text-xl font-bold text-gray-800">Adicionar Pokémon</h2>
+          <form onSubmit={adicionar} className="grid w-full grid-cols-1 gap-3 sm:grid-cols-[1fr_1fr_auto]">
               <input
+                placeholder="Nome do Pokémon"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                className="rounded-lg border border-gray-300 p-3 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200"
+              />
+              <input
+                placeholder="Tipo (ex.: Fogo)"
+                value={tipo}
+                onChange={(e) => setTipo(e.target.value)}
+                className="rounded-lg border border-gray-300 p-3 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200"
+              />
+              <button
+                type="submit"
+                className="rounded-lg bg-gradient-to-r from-red-500 to-yellow-500 px-5 py-3 font-semibold text-white shadow hover:brightness-105"
+              >
+                Adicionar
+              </button>
+          </form>
+        </div>
 
-              type="text"
-
-              className="w-330 p-3 pb-1 pl-10 border-b border-gray-200 focus:outline-none  "/>
-
-
-
-              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2 cursor-pointer">Buscar</button>
-
+        {nomeEditando && (
+          <div className="mx-4 mb-8 rounded-lg border border-yellow-200 bg-yellow-50 p-5 shadow-md sm:mx-10">
+            <h3 className="mb-3 font-bold text-yellow-800">Editando: {nomeEditando}</h3>
+            <form onSubmit={att} className="grid w-full grid-cols-1 gap-3 sm:grid-cols-[1fr_1fr_auto_auto]">
+                <input
+                  placeholder="Novo nome"
+                  value={novoNome}
+                  onChange={(e) => setNovoNome(e.target.value)}
+                  className="rounded-lg border border-yellow-300 p-3 outline-none focus:border-yellow-500"
+                />
+                <input
+                  placeholder="Novo tipo"
+                  value={novoTipo}
+                  onChange={(e) => setNovoTipo(e.target.value)}
+                  className="rounded-lg border border-yellow-300 p-3 outline-none focus:border-yellow-500"
+                />
+                <button
+                  type="submit"
+                  className="rounded-lg bg-yellow-500 px-5 py-3 font-semibold text-white shadow hover:bg-yellow-600"
+                >
+                  Salvar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setNomeEditando(null)}
+                  className="rounded-lg bg-gray-400 px-5 py-3 font-semibold text-white shadow hover:bg-gray-500"
+                >
+                  Cancelar
+                </button>
             </form>
-
-        </div>
-
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center px-6 mx-auto w-full max-w-6xl">
-
-       
-          <div className="flex flex-col justify-between h-72 w-64 text-center items-center rounded-xl bg-yellow-100 p-5 shadow-lg border border-black/5 dark:bg-slate-800 dark:border-white/10 transition-transform duration-300 hover:scale-105">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" className="w-24 h-24 object-contain" />
-            <h1 className="text-xl font-bold dark:text-white my-2">Pikachu</h1>
-            <button className="bg-yellow-500 rounded-full px-4 py-1 text-xs font-semibold text-white w-full max-w-[120px]">Elétrico</button>
           </div>
+        )}
 
-         
-          <div className="flex flex-col justify-between h-72 w-64 text-center items-center rounded-xl bg-green-100 p-5 shadow-lg border border-black/5 dark:bg-slate-800 dark:border-white/10 transition-transform duration-300 hover:scale-105">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" className="w-24 h-24 object-contain" />
-            <h1 className="text-xl font-bold text-black dark:text-white my-2">Bulbassauro</h1>
-            <button className="bg-green-500 rounded-full px-4 py-1 text-xs font-semibold text-white w-full max-w-[120px]">Planta</button>
-          </div>
-
-         
-          <div className="flex flex-col justify-between h-72 w-64 text-center items-center rounded-xl bg-red-200 p-5 shadow-lg border border-black/5 dark:bg-slate-800 dark:border-white/10 transition-transform duration-300 hover:scale-105">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" className="w-24 h-24 object-contain" />
-            <h1 className="text-xl font-bold text-black dark:text-white my-2">Charmander</h1>
-            <button className="bg-red-500 rounded-full px-4 py-1 text-xs font-semibold text-white w-full max-w-[120px]">Fogo</button>
-          </div>
-
-         
-          <div className="flex flex-col justify-between h-72 w-64 text-center items-center rounded-xl bg-blue-100 p-5 shadow-lg border border-black/5 dark:bg-slate-800 dark:border-white/10 transition-transform duration-300 hover:scale-105  ">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" className="w-24 h-24 object-contain" />
-            <h1 className="text-xl font-bold text-black dark:text-white my-2">Squirtle</h1>
-            <button className="bg-blue-500 rounded-full px-4 py-1 text-xs font-semibold text-white w-full max-w-[120px]">Água</button>
-          </div>
-
-        </div>
+        <section className="mx-auto w-full max-w-6xl px-6" aria-labelledby="lista-titulo">
+          <h2 id="lista-titulo" className="mb-4 text-xl font-bold text-gray-800">
+            Pokémon cadastrados
+          </h2>
+          {lista.length > 0 ? (
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {lista.map((p) => (
+                <li
+                  key={p.nome}
+                  className="flex items-center gap-4 rounded-xl border border-red-100 bg-white p-4 shadow-md"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-yellow-400 text-xl font-bold text-white"
+                  >
+                    {p.nome.trim().charAt(0).toUpperCase() || "?"}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate font-semibold text-gray-800">{p.nome}</p>
+                    <span className="mt-1 inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-700">
+                      {p.tipo}
+                    </span>
+                  </div>
+                  <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setNomeEditando(p.nome);
+                        setNovoNome(p.nome);
+                        setNovoTipo(p.tipo);
+                      }}
+                      className="rounded-lg bg-yellow-500 px-3 py-2 text-sm font-semibold text-white shadow hover:bg-yellow-600"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => deletar(p.nome)}
+                      className="rounded-lg bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow hover:bg-red-600"
+                    >
+                      Deletar
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="rounded-xl border border-black/5 bg-white p-5 text-gray-500 shadow-md">
+              Nenhum Pokémon cadastrado ainda.
+            </p>
+          )}
+        </section>
       </div>
 
-      {/* Footer */}
-      <div className="bg-zinc-800 mt-auto">
-        <h1 className="text-center text-sm text-white p-3">Pokédex - React + Tailwind</h1>
-      </div>
-
+      <footer className="mt-auto bg-zinc-800">
+        <p className="p-3 text-center text-sm text-white">Pokédex - React + Tailwind</p>
+      </footer>
     </main>
   );
 }

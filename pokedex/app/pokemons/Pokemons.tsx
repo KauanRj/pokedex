@@ -1,3 +1,6 @@
+
+
+
 export function Pokemons() {
   const pokemons = [
     { id: 1, 
@@ -148,16 +151,22 @@ export function Pokemons() {
   return (
     <main className="flex flex-col min-h-screen">
       
-      <div className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
+      <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
         <div className="p-1 flex gap-4 text-white text-2xl font-bold">
           <h1>Pokemon</h1>
         </div>
-        <div className="flex p-1 gap-4 text-white font-medium">
-          <h1 className="cursor-pointer hover:underline">Home</h1>
-          <h1 className="cursor-pointer hover:underline">Pokemons</h1>
-          <h1 className="cursor-pointer hover:underline">Tipos</h1>
-        </div>
-      </div>
+        <nav className="flex p-1 gap-4 text-white font-medium">
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/'}>
+            Home
+          </span>
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/pokemons'}>
+            Pokemons
+          </span>
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/types'}>
+            Tipos
+          </span>
+        </nav>
+      </header>
 
       <div className="p-8 bg-red-100 flex-1 flex flex-col gap-6">
 
@@ -180,7 +189,7 @@ export function Pokemons() {
 
             
         </div>
-
+            <h1>teste oi</h1>
       </div>
 
       <div className="bg-zinc-800 mt-auto">
